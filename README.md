@@ -12,10 +12,10 @@ https://store.arduino.cc/arduino-mkrfox1200
 - DHT22 for Temperature and Humidity (Internal)
 - AM2305 for Temperature and Humidity (External)
 - DS1820 for soil Temperature
-- Capacituve soil sensor
+- Capacitive soil sensor
 - Leaf wetness (used an analogic Rain Sensor)
 - TODO: Pressure sensor
-- TODO: anemometer
+- TODO: Anemometer
 
 ## Libraries
 - DHT Sensor Library
