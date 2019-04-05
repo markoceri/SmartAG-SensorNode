@@ -26,4 +26,11 @@ https://store.arduino.cc/arduino-mkrfox1200
 - Battery
 - TODO: BMP280
 
+## Features
+- Check battery level
+- Check sensors errors and comunicate it in message bitfield
+- Switch to Long sleep time when battery in to low
+- Stop sleep by pulling down a pin (usefull for reprogramming)
+- Optimized consuption powering off sensors after reading
+
 
