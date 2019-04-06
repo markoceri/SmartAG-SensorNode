@@ -2,7 +2,6 @@
  * SmartAG SensorNode
  * Author: Marco Mancino
  * Updated: 04/2019
- * v 0.2.2
  * 
  * TODO: 
  *  - Parse response message
@@ -25,14 +24,14 @@
  *  + Added statistics calculations on sensors reads
  *  
 */
-#define VERSION "v0.2.2"
+#define VERSION "v0.2.3"
 
 #include <SigFox.h>
 #include <ArduinoLowPower.h>
 
 //*** General
 // ------------------------------------------ 
-#define DISABLE_SEND_MESSAGE // Message to Sigfox is not sent
+//#define DISABLE_SEND_MESSAGE // Message to Sigfox is not sent
 //#define DISABLE_SLEEP // Board doesn't go to sleep mode
 
 #define ENABLE_INTERNAL_DHT   // Enable the internal Humidity and Temperature sensor
@@ -76,14 +75,14 @@ int time_to_sleep_min_default = 15;
 
 // Battery definition
 // ------------------------------------------
-// R1 2.18K + 6.8ohm (Transistor)
+// R1 2.18K + 6.8ohm (Transistor?)
 // R2 3.28K
-#define BATTERY_SENSE_R1 2180
-#define BATTERY_SENSE_R2 3280
+//#define BATTERY_SENSE_R1 2180
+//#define BATTERY_SENSE_R2 3280
 #define BATTERY_SENSE_RATIO 2.17
 
-#define BATTERY_VOLTAGE_LOW 3000
-#define BATTERY_VOLTAGE_HIGHT 4200
+#define BATTERY_VOLTAGE_LOW 3000 // millivolt
+#define BATTERY_VOLTAGE_HIGHT 4200 // millivolt
 #define BATTERY_WARNING_PERC_LEV1 10
 #define BATTERY_WARNING_PERC_LEV2 5
 // ------------------------------------------
@@ -112,6 +111,7 @@ int time_to_sleep_min_default = 15;
 
 // Sigfox message definition
 // ------------------------------------------
+#define SIGFOX_MAX_PAYLOAD_SIZE 12
 typedef struct __attribute__ ((packed)) sigfox_message {
   uint8_t battery;            // 1 byte
   uint8_t stCode;             // 1 byte
@@ -714,10 +714,13 @@ void sendMessage(){
   delay(100);
 
   #if !defined(PRODUCTION)
-    Serial.println("Dimensione pacchetto: " + String(sizeof(msg)) + "bytes");
-    Serial.print("Module temperature: ");
+    Serial.print("Packet size: " + String(sizeof(msg)) + "bytes");
+    if (sizeof(msg) < SIGFOX_MAX_PAYLOAD_SIZE)
+      Serial.print(" (" + String(SIGFOX_MAX_PAYLOAD_SIZE - sizeof(msg)) + " bytes available)");
+    Serial.println();
+    Serial.print("Sigfox Module temperature: ");
     Serial.println(SigFox.internalTemperature());
-    Serial.print("Invio messaggio a Sigfox... ");
+    Serial.print("Sending message to Sigfox... ");
   #endif
 
   SigFox.status();
