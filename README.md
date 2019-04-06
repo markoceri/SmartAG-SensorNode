@@ -12,10 +12,10 @@ https://store.arduino.cc/arduino-mkrfox1200
 - DHT22 for Temperature and Humidity (Internal)
 - AM2305 for Temperature and Humidity (External)
 - DS1820 for soil Temperature
-- Capacitive soil sensor
+- Capacitive soil Moisture sensor
 - Leaf wetness (used an analogic Rain Sensor)
-- TODO: Pressure sensor
-- TODO: Anemometer
+- TODO: Add BMP280 Pressure sensor
+- TODO: Add Anemometer
 
 ## Other components
 - 2x 18650 battery (2p)
@@ -37,5 +37,7 @@ https://store.arduino.cc/arduino-mkrfox1200
 - Switch to Long sleep time when battery in to low
 - Stop sleep by pulling down a pin (usefull for reprogramming)
 - Optimized consuption powering off sensors after reading
+- TODO: Parse response message
+- TODO: Change deep sleep from downlink message
 
 

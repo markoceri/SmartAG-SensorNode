@@ -2,18 +2,6 @@
  * SmartAG SensorNode
  * Author: Marco Mancino
  * Updated: 04/2019
- * 
- * TODO: 
- *  - Parse response message
- *  - Implement very deep sleep
- *  - Change deep sleep from downlink message
- *  
- *  FEATURES:
- *  + Check battery level
- *  + Check sensors error and comunicate it in message bitfield
- *  + Switch to Long sleep time when battery in to low
- *  + Stop sleep by pulling down a pin (usefull for reprogramming)
- *  + Optimized consuption powering off sensors after reading
  *  
  *  CHENGES:
  *  + Removed one Soil Temperature sensor and added an externa Temperature ad Humidity Sensors
