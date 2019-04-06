@@ -17,6 +17,11 @@ https://store.arduino.cc/arduino-mkrfox1200
 - TODO: Pressure sensor
 - TODO: Anemometer
 
+## Other components
+- 2x 18650 battery (2p)
+- 2x 6v Solar Panel
+- 1x TP4056 Lithium Charger
+
 ## Libraries
 - DHT Sensor Library
 - DallasTemperature
