@@ -1,11 +1,11 @@
 # SmartAG SensorNode
 ![smartag-logo](docs/images/smartag-logo.png)
+
 SmartAG SensorNode is a funny project that catch data from field and send it to Sigfox Backend. SensorNode aims to implement a simple weather station with soil moisture sensor, leaf wetness sensors, soil temperature and other useful sensors for smart and precision farming.
 
 This project is under active development, feel free to make improvements.
 
 ![sensornode](docs/images/sensornode.jpg)
-![sensornode2](docs/images/sensornode2.jpg)
 
 # Project Parts
 ## Board
